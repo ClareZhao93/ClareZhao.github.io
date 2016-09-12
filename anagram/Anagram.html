@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Anagram</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script>
+			$(document).ready(function(){
+			});
+		</script>
+
+		<link rel="stylesheet" type="text/css" href="anagram.css" />
+	</head>
+	<body>
+		<div id = "head">
+			<h1 id = "result">Anagram</h1>
+			<p id = "title"> Input two words, the following program can tell if they are anagram.</p>
+			<p id = "titlenote"> * NOTE: IN THIS SYSTEM, WE DO NOT CONSIDER TWO NULL STRINGS AS ANAGRAM. AN INPUT IS REQUIRED. </P>
+		</div>
+
+		<div id = "content">
+			<p id = "input1"> Input I :<input type="text" id="ana1" class = "w3-input">
+				<p id="note1" class = "note">
+				</p><br>
+			</p>
+			<p id = "input2"> Input II :<input type="text" id = "ana2" class = "w3-input">
+				<p id="note2" class = "note">
+				</p><br>
+			</p>
+			<button type='button' id='checkButton' onclick="checkAnagram()" class = "myButton">Check Anagram</button>
+		</div>
+
+
+		<script>
+		function checkAnagram(){
+			console.log("aaaaa");
+
+			var word1 = $("#ana1").val();
+			var word2 = $("#ana2").val();
+			
+			var n1 = word1.length;
+			var n2 = word2.length;
+			var note1 = $("#note1").html();
+			var note2 = $("#note2").html();
+			
+			console.log(n1);
+			console.log(n2);
+
+
+			if(note1.length>0) $("#note1").html("");
+			if(note2.length>0) $("#note2").html("");
+			$("#result").text("");
+
+			if(!n1){	
+				$("#note1").text("* This field is required");
+				$("#result").hide();
+				$("#result").html("Anagram").fadeIn();
+				$("#result").fadeIn();
+				
+			}
+			if(!n2){
+				$("#note2").text("* This field is required");
+				$("#result").hide();
+				$("#result").html("Anagram");
+				$("#result").fadeIn();
+				
+			}
+			if(n1==0 || n2==0) return;
+			if( n1!=n2 ){
+				$("#result").hide();
+				$("#result").text("The two words are not anagram");
+				$("#result").fadeIn();
+			}else{
+				var record = {};
+				for(var i=0; i<n1; i++){
+
+					var char1 = word1.slice(i, i+1);
+					var char2 = word2.slice(i, i+1);
+
+					if  (!record[char1] ){
+						record[char1] = 1;
+					}else{
+						record[char1] = record[char1] + 1;
+					}
+
+					if(!record[char2]){
+						record[char2] = -1;
+					}else{
+						record[char2] = record[char2] - 1;
+					}
+
+				}
+				console.log(record);
+				var keys = Object.keys(record);
+				var keyLength = keys.length;
+
+				console.log(keyLength);
+				for(var i =0; i<keyLength; i++){
+					if( record[keys[i]]!= 0) {
+						$("#result").hide();
+						$("#result").html("The two words are not anagram");
+						$("#result").fadeIn();
+						return;
+					}
+				}
+				$("#result").hide();
+				$("#result").html("The two words are anagram");
+				$("#result").fadeIn();
+				return;
+			}
+
+			//clear
+		}
+		</script>
+	</body>
+</html>

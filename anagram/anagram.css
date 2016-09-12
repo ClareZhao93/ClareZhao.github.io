@@ -1,0 +1,98 @@
+<!--
+red:#c0392b;
+blue:#3498db;
+-->
+body{
+	font-family: sans-serif;
+	margin:0;
+	font-weight:bold;
+}
+
+#head{
+	background:#3498db;
+	position:absolute;
+	display: inline-block;
+	width:100%;
+	margin-top: 0;
+	padding-top: 0;
+}
+
+#content{
+	text-align: center;
+	padding-top: 330px;
+}
+
+h1{
+	padding-top: 25px;
+	text-align: center;
+	color:white;
+	font-size: 80px;
+}
+
+#title{
+	padding-top:-30px;
+	text-align: center;
+	color:white;
+	font-size: 20px;
+}
+
+#titlenote{
+	padding-top: 1px;
+	padding-bottom: 30px;
+	color:#c0392b;
+	font-size:10px;
+	text-align: center;
+}
+
+#input1,#input2{
+	padding-top:5px;
+	margin:20px;
+	font-size:30px;
+	font-weight:bold;
+	text-align:center;
+}
+
+input[type=text] {
+    border: none;
+    border-bottom: 2px solid #3498db;
+    width:50%;
+    height:40px;
+    font-size:30px;
+}
+
+
+#input2{
+	padding-top:-20px;
+}
+
+.note{
+	text-align: center;
+	font-size: 10px;
+	color:#c0392b;
+}
+
+
+.myButton {
+	width:60%;
+	height:60px;
+	box-shadow:inset 0px 1px 0px 0px #ffffff;
+	background-color:transparent;
+	border-radius:6px;
+	border:1px solid #3498db;
+	display:inline-block;
+	cursor:pointer;
+	color:#3498db;
+	font-size:20px;
+	font-weight:bold;
+
+}
+.myButton:hover {
+	background-color:transparent;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
+
+
