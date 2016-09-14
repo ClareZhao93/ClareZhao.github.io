@@ -67,7 +67,7 @@
 			if(n1==0 || n2==0) return;
 			if( n1!=n2 ){
 				$("#result").hide();
-				$("#result").text("The two words are not anagram");
+				$("#result").text("NO");
 				$("#result").fadeIn();
 			}else{
 				var record = {};
@@ -97,13 +97,13 @@
 				for(var i =0; i<keyLength; i++){
 					if( record[keys[i]]!= 0) {
 						$("#result").hide();
-						$("#result").html("The two words are not anagram");
+						$("#result").html("NO");
 						$("#result").fadeIn();
 						return;
 					}
 				}
 				$("#result").hide();
-				$("#result").html("The two words are anagram");
+				$("#result").html("YES :)");
 				$("#result").fadeIn();
 				return;
 			}
